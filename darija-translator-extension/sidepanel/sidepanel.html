@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Darija Translator</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1>🇲🇦 Darija Translator</h1>
+      <p class="subtitle">English to Moroccan Arabic</p>
+      <div class="status-bar">
+        <span class="status-dot" id="statusDot"></span>
+        <span class="status-text" id="statusText">Checking...</span>
+      </div>
+    </header>
+
+    <!-- Main Translation Area -->
+    <main class="main-content">
+      <!-- Input Section -->
+      <section class="input-section">
+        <div class="section-header">
+          <label for="sourceText">English</label>
+          <button class="icon-btn" id="clearBtn" title="Clear text">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+          </button>
+        </div>
+        <textarea 
+          id="sourceText" 
+          class="text-area" 
+          placeholder="Enter English text or right-click on selected text on any webpage..."
+          rows="6"
+        ></textarea>
+        <div class="char-count">
+          <span id="charCount">0</span> / 5000 characters
+        </div>
+      </section>
+
+      <!-- Translate Button -->
+      <div class="action-section">
+        <button id="translateBtn" class="translate-btn">
+          <span>Translate</span>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L10 4.414l6.293 6.293a1 1 0 001.414-1.414l-7-7z"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Output Section -->
+      <section class="output-section">
+        <div class="section-header">
+          <label for="targetText">Moroccan Darija (الدارجة)</label>
+          <button class="icon-btn" id="copyBtn" title="Copy translation" disabled>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+              <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+            </svg>
+          </button>
+        </div>
+        <textarea 
+          id="targetText" 
+          class="text-area" 
+          placeholder="Translation will appear here..."
+          rows="6"
+          readonly
+          dir="rtl"
+        ></textarea>
+        <div class="translation-meta" id="translationMeta" style="display: none;">
+          <span id="processingTime"></span>
+        </div>
+      </section>
+
+      <!-- Loading Indicator -->
+      <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+        <div class="spinner"></div>
+        <p>Translating...</p>
+      </div>
+
+      <!-- Error Message -->
+      <div class="error-alert" id="errorAlert" style="display: none;">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+        </svg>
+        <span id="errorText"></span>
+        <button class="close-btn" id="closeError">×</button>
+      </div>
+    </main>
+
+    <!-- History Section -->
+    <section class="history-section" id="historySection" style="display: none;">
+      <div class="history-header">
+        <h3>Recent Translations</h3>
+        <button class="text-btn" id="clearHistoryBtn">Clear All</button>
+      </div>
+      <div class="history-list" id="historyList"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Right-click on selected text to translate</p>
+    </footer>
+  </div>
+
+  <script src="sidepanel.js"></script>
+</body>
+</html>

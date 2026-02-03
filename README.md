@@ -1,5 +1,7 @@
 # 🇲🇦 Darija Translator - English to Moroccan Arabic Translation Service
 
+**🎥 Vidéo de démonstration :** https://drive.google.com/file/d/1bmLqdYbH_wBo7ZDzKYwuq5_H64FvkkAs/view?usp=sharing
+
 A complete AI-powered translation system for converting English text to Moroccan Arabic (Darija) dialect, featuring a secure REST API, web client, and Chrome extension.
 
 ![Java](https://img.shields.io/badge/Java-17-orange)

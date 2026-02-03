@@ -651,23 +651,3 @@ View logs in:
 
 #
 ```
-
-## 👤 Contact
-
-**Zouhir Aamrani**
-- GitHub: [@ZouhirAamrani](https://github.com/ZouhirAamrani)
-- Email: aamrani.zouhir@gmail.com
-- LinkedIn: [AAMRANI ZOUHIR](https://www.linkedin.com/in/zouhir-aamrani/)
-
-## 🙏 Acknowledgments
-
-- [Google Gemini](https://deepmind.google/technologies/gemini/) - AI translation engine
-- [Jersey Framework](https://eclipse-ee4j.github.io/jersey/) - JAX-RS implementation
-- [Apache Tomcat](https://tomcat.apache.org/) - Application server
-- [Chrome Extensions](https://developer.chrome.com/docs/extensions/) - Extension platform
-
----
-
-**Made with ❤️ for Morocco** 🇲🇦
-
-**Star ⭐ this repository if you found it helpful!**
